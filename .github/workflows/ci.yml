@@ -2,7 +2,7 @@ name: CI test
 on:
   push:
     branches:
-      - *
+      - "**"
 
 jobs:
   builds-dev-env:
