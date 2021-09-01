@@ -1476,21 +1476,12 @@
     prop-types "^15.7.2"
     react-is "^16.8.0 || ^17.0.0"
 
-"@mybittutorial/tutorial.elements.button@0.0.1":
+"@mybittutorial/tutorial.elements.button@^0.0.1":
   version "0.0.1"
   resolved "https://node.bit.dev/@mybittutorial/tutorial.elements.button/-/@mybittutorial-tutorial.elements.button-0.0.1.tgz#2020b045f30164a21fb29792c0ed312a6de36e15"
   integrity sha1-ICCwRfMBZKIfspeSwO0xKm3jbhU=
   dependencies:
     "@material-ui/core" "^4.12.3"
-    core-js "^3.0.0"
-
-"@mybittutorial/tutorial.ui.card@^0.0.1":
-  version "0.0.1"
-  resolved "https://node.bit.dev/@mybittutorial/tutorial.ui.card/-/@mybittutorial-tutorial.ui.card-0.0.1.tgz#5c7b8e5628e71c8b1c5aefd14d571bb1eafca675"
-  integrity sha1-XHuOVijnHIscWu/RTVcbser8pnU=
-  dependencies:
-    "@material-ui/core" "^4.12.3"
-    "@mybittutorial/tutorial.elements.button" "0.0.1"
     core-js "^3.0.0"
 
 "@nodelib/fs.scandir@2.1.4":
@@ -3626,9 +3617,9 @@ core-js@^2.4.0:
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
 core-js@^3.0.0:
-  version "3.16.3"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.16.3.tgz#1f2d43c51a9ed014cc6c83440af14697ae4b75f2"
-  integrity sha512-lM3GftxzHNtPNUJg0v4pC2RC6puwMd6VZA7vXUczi+SKmCWSf4JwO89VJGMqbzmB7jlK7B5hr3S64PqwFL49cA==
+  version "3.16.4"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.16.4.tgz#0fb1029a554fc2688c0963d7c900e188188a78e0"
+  integrity sha512-Tq4GVE6XCjE+hcyW6hPy0ofN3hwtLudz5ZRdrlCnsnD/xkm/PWQRudzYHiKgZKUcefV6Q57fhDHjZHJP5dpfSg==
 
 core-js@^3.6.5:
   version "3.9.0"
