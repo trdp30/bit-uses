@@ -1,0 +1,48 @@
+name: CI test
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  builds-dev-env:
+    name: ci test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out latest changes
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: "**/node_modules"
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      
+      - name: init bit.dev
+        run: |
+          echo "Adding bit.dev to npm registry"
+          npm config set @bit:registry https://node.bit.dev
+          npm config set @mybittutorial:registry=https://node.bit.dev
+          npm config set @teambit:registry=https://node.bit.dev
+          npm config set //node.bit.dev/:_authToken ${BIT_TOKEN}
+          echo "Completed adding bit.dev to npm registry"
+        env:
+          BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm i -g yarn
+          yarn install --frozen-lockfile --silent --ignore-optional --non-interactive
+      - name: build & deployment
+        run: |
+          yarn build
